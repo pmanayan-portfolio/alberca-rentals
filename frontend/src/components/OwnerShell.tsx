@@ -1,0 +1,1 @@
+export function OwnerTitle({eyebrow='Owner workspace',title,description}:{eyebrow?:string;title:string;description?:string}){return <div className="mb-8"><p className="text-xs font-bold uppercase tracking-[.25em] text-[#c59638]">{eyebrow}</p><h1 className="font-display text-4xl mt-2">{title}</h1>{description&&<p className="muted mt-2 max-w-2xl">{description}</p>}</div>}

@@ -1,0 +1,2 @@
+import {Navigate,useLocation} from 'react-router-dom';import {useAuth} from '../state/AuthContext';
+export function Protected({children,manager=false}:{children:React.ReactNode;manager?:boolean}){const{user,loading}=useAuth();const loc=useLocation();if(loading)return <div className="shell py-20">Loading…</div>;if(!user)return <Navigate to="/login" replace state={{from:loc.pathname}}/>;if(manager&&user.role!=='manager')return <Navigate to="/" replace/>;return <>{children}</>}

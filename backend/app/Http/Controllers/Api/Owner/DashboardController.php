@@ -1,0 +1,3 @@
+<?php
+namespace App\Http\Controllers\Api\Owner;use App\Http\Controllers\Controller;use App\Models\Booking;use App\Models\Event;use App\Models\RentalItem;
+class DashboardController extends Controller{public function __invoke(){return ['bookings_total'=>Booking::count(),'pending'=>Booking::where('status','pending')->count(),'approved'=>Booking::whereIn('status',['approved','confirmed'])->count(),'revenue'=>(float)Booking::whereNotIn('status',['cancelled','rejected'])->sum('final_total'),'rental_items'=>RentalItem::where('is_active',true)->count(),'experiences'=>Event::where('is_active',true)->count()];}}

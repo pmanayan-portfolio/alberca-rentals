@@ -1,0 +1,29 @@
+backend/.env
+backend/vendor/
+backend/storage/logs/*.log
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/views/*
+frontend/.env
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+Thumbs.db
+
+# Runtime/user uploads are stored in Cloudinary. Keep only the placeholder.
+backend/storage/app/public/*
+!backend/storage/app/public/.gitkeep
+
+# Environment / secrets
+backend/.env
+frontend/.env
+.env
+
+# Database exports
+*.sql
+*.dump
+*.backup
+
+# Dependencies
+backend/vendor/
+frontend/node_modules/

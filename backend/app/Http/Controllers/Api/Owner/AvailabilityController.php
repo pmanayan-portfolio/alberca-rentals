@@ -1,0 +1,3 @@
+<?php
+namespace App\Http\Controllers\Api\Owner;use App\Http\Controllers\Controller;use App\Models\AvailabilityBlock;use Illuminate\Http\Request;
+class AvailabilityController extends Controller{public function index(){return AvailabilityBlock::orderBy('start_at')->get();}public function store(Request $r){$d=$r->validate(['start_at'=>'required|date','end_at'=>'required|date|after:start_at','reason'=>'nullable|string|max:255','is_all_day'=>'sometimes|boolean']);return response()->json(AvailabilityBlock::create($d),201);}public function destroy(AvailabilityBlock $availability_block){$availability_block->delete();return response()->noContent();}}
