@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://alberca-rentals-api.onrender.com/api/:path*"
+    },
+    {
+      "source": "/sanctum/:path*",
+      "destination": "https://alberca-rentals-api.onrender.com/sanctum/:path*"
+    }
+  ]
+}
